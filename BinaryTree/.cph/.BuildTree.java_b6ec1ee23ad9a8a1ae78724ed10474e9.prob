@@ -1,0 +1,1 @@
+{"name":"Local: BuildTree","url":"c:\\DATA STRUCTURE & ALGO\\BinaryTree\\BuildTree.java","tests":[{"id":1616913107963,"input":"3\n4\n-1\n6\n-1\n-1\n5\n1\n-1\n-1\n-1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\DATA STRUCTURE & ALGO\\BinaryTree\\BuildTree.java","group":"local","local":true}
