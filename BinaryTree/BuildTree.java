@@ -249,5 +249,39 @@ public class BuildTree {
 
         
     }
+     public static Node deleteinbst(Node root,int key) {
+        if(root==null)
+        return null;
+        else if(root.data>key){
+        root.left=deleteinbst(root.left, key);
+        return root;
+        }
+        else if(root.data==key){
+            //one
+            if(root.left==null&&root.right==null){
+               
+                return null;
+            }
+            if(root.left!=null&&root.right==null){
+                Node temp=root.left;
+                return temp;
+            }
+            if(root.right!=null&&root.left==null){
+                Node temp=root.right;
+                return temp;
+            }
+            Node replace=root.right;
+            while(replace.left!=null){
+                replace=replace.left;
+            }
+            root.data=replace.data;
+            root.right=deleteinbst(root.right, replace.data)
+
+
+        }
+        else if (root.data<key){
+            root.right=deleteinbst(root.right, key);
+        }
+    }
     
 }
