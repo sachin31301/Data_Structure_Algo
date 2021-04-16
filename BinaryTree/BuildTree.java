@@ -252,7 +252,7 @@ public class BuildTree {
      public static Node deleteinbst(Node root,int key) {
         if(root==null)
         return null;
-        else if(root.data>key){
+         if(root.data>key){
         root.left=deleteinbst(root.left, key);
         return root;
         }
@@ -275,13 +275,142 @@ public class BuildTree {
                 replace=replace.left;
             }
             root.data=replace.data;
-            root.right=deleteinbst(root.right, replace.data)
+            root.right=deleteinbst(root.right, replace.data);
+            return root;
 
 
         }
         else if (root.data<key){
             root.right=deleteinbst(root.right, key);
+            return root;
         }
+        return root;
+    }
+
+    static class LinkList{
+        Node head;
+        Node tail;
     }
     
+    public static LinkList flatten(Node root) {
+        LinkList l = new LinkList();
+        if(root==null){
+            l.head=l.tail=null;
+            return l;
+        }
+        if(root.left==null&&root.right==null){
+            l.head=root;
+            l.tail=root;
+            return l;
+        }
+        if(root.left!=null&&root.right==null){
+            LinkList left= flatten(root.left);
+            left.tail.right=root;
+            l.head=left.head;
+            l.tail=root;
+            return l;
+        }
+        if(root.left==null&&root.right!=null){
+            LinkList right= flatten(root.right);
+            root.right=right.head;
+            l.head=root;
+            l.tail=right.tail;
+            return l;
+
+        }
+        LinkList left= flatten(root.left);
+        LinkList right=flatten(root.right);
+        left.tail.right=root;
+        root.right=right.head;
+        l.head=left.head;
+        l.tail=right.tail;
+        return l;
+        
+    }
+
+    public  static void inorderiterative(Node root) {
+        if(root==null){
+            return;
+        }
+        Stack<Node>st= new Stack<>();
+        Node curr=root;
+        while(curr!=null||st.size()>0){
+            while(curr!=null){
+                st.push(curr);
+                curr=curr.left;
+            }
+            curr=st.pop();
+            curr=curr.right;
+            
+        }
+    }
+    public static void preiterative(Node root) {
+        if(root==null)
+        return;
+        Stack<Node>st= new Stack<>();
+        st.push(root);
+        while(st.size()>0){
+            Node temp=st.pop();
+            System.out.println(temp.data);
+            if(temp.right!=null)
+            st.push(temp.right);
+            if(temp.left!=null)
+            st.push(temp.left);
+
+        }
+
+    }
+
+        public static void postiterative(Node root){
+            if(root==null)
+            return;
+            Stack<Node>st1= new Stack<>();
+            Stack<Node>st2= new Stack<>();
+            st1.push(root);
+            while(st1.size()>0){
+                Node temp=st1.pop();
+                st2.push(temp);
+                if(temp.left!=null){
+                    st1.push(temp.left);
+
+                }
+                if(temp.right!=null){
+                    st1.push(temp.right);
+                }
+            }
+            while(st2.size()>0){
+                System.out.println(st2.pop().data);
+            }
+
+
+    }
+
+    public static void leftview(Node root) {
+        if(root==null)
+        return;
+        Queue<Node>q= new LinkedList<>();
+        q.add(root);
+        while(!q.isEmpty()){
+            int n=q.size();
+            for (int i = 1; i <=n; i++) {
+                Node temp=q.poll();
+                if(i==1)
+                System.out.println(root.data);
+                if(temp.left!=null){
+                    
+
+                }
+            }
+        }
+
+    }
+    public static Node buildfromlevel(){
+        Scanner sc1= new Scanner(System.in);
+        int d=sc1.nextInt();
+        if(d==-1)
+        return null;
+        Node root = new Node(d);
+        
+
+    }
 }
