@@ -1,0 +1,154 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "java",
+            "name": "Launch Java Program",
+            "request": "launch",
+            "mainClass": "zonekanp",
+            "projectName": "DATA STRUCTURE & ALGO_99f82378"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch BuildTree",
+            "request": "launch",
+            "mainClass": "BuildTree",
+            "projectName": "DATA STRUCTURE & ALGO_99f82378"
+        },
+        {
+            "type": "java",
+            "name": "Launch Codechef",
+            "request": "launch",
+            "mainClass": "Codechef",
+            "projectName": "DATA STRUCTURE & ALGO_99f82378"
+        },
+        {
+            "type": "java",
+            "name": "Launch Graph",
+            "request": "launch",
+            "mainClass": "Graph",
+            "projectName": "DATA STRUCTURE & ALGO_99f82378"
+        },
+        {
+            "type": "java",
+            "name": "Launch Graphpractice",
+            "request": "launch",
+            "mainClass": "Graphpractice",
+            "projectName": "DATA STRUCTURE & ALGO_99f82378"
+        },
+        {
+            "type": "java",
+            "name": "Launch Gusinghm",
+            "request": "launch",
+            "mainClass": "Gusinghm",
+            "projectName": "DATA STRUCTURE & ALGO_99f82378"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "DATA STRUCTURE & ALGO_99f82378"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestClass",
+            "request": "launch",
+            "mainClass": "TestClass",
+            "projectName": "DATA STRUCTURE & ALGO_99f82378"
+        },
+        {
+            "type": "java",
+            "name": "Launch Weightedgraph",
+            "request": "launch",
+            "mainClass": "Weightedgraph",
+            "projectName": "DATA STRUCTURE & ALGO_99f82378"
+        },
+        {
+            "type": "java",
+            "name": "Launch aggcows",
+            "request": "launch",
+            "mainClass": "aggcows",
+            "projectName": "DATA STRUCTURE & ALGO_99f82378"
+        },
+        {
+            "type": "java",
+            "name": "Launch dijkstar",
+            "request": "launch",
+            "mainClass": "dijkstar",
+            "projectName": "DATA STRUCTURE & ALGO_99f82378"
+        },
+        {
+            "type": "java",
+            "name": "Launch ekospoj",
+            "request": "launch",
+            "mainClass": "ekospoj",
+            "projectName": "DATA STRUCTURE & ALGO_99f82378"
+        },
+        {
+            "type": "java",
+            "name": "Launch graph1$Graph",
+            "request": "launch",
+            "mainClass": "graph1$Graph",
+            "projectName": "DATA STRUCTURE & ALGO_99f82378"
+        },
+        {
+            "type": "java",
+            "name": "Launch graphusinghm",
+            "request": "launch",
+            "mainClass": "graphusinghm",
+            "projectName": "DATA STRUCTURE & ALGO_99f82378"
+        },
+        {
+            "type": "java",
+            "name": "Launch grid",
+            "request": "launch",
+            "mainClass": "grid",
+            "projectName": "DATA STRUCTURE & ALGO_99f82378"
+        },
+        {
+            "type": "java",
+            "name": "Launch kruskal",
+            "request": "launch",
+            "mainClass": "kruskal",
+            "projectName": "DATA STRUCTURE & ALGO_99f82378"
+        },
+        {
+            "type": "java",
+            "name": "Launch lowerbound",
+            "request": "launch",
+            "mainClass": "lowerbound",
+            "projectName": "DATA STRUCTURE & ALGO_99f82378"
+        },
+        {
+            "type": "java",
+            "name": "Launch pivotelement",
+            "request": "launch",
+            "mainClass": "pivotelement",
+            "projectName": "DATA STRUCTURE & ALGO_99f82378"
+        },
+        {
+            "type": "java",
+            "name": "Launch simplebinarysearch",
+            "request": "launch",
+            "mainClass": "simplebinarysearch",
+            "projectName": "DATA STRUCTURE & ALGO_99f82378"
+        },
+        {
+            "type": "java",
+            "name": "Launch Mainc",
+            "request": "launch",
+            "mainClass": "Mainc"
+        }
+    ]
+}

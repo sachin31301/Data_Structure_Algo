@@ -9,9 +9,9 @@ class TestClass {
     public static void main(String args[] ) throws Exception {
         Scanner sc = new Scanner(System.in);
         int nofsol = sc.nextInt();
-        int arr[] = new int[nofsol];
+        int solu[] = new int[nofsol];
         for(int i=0; i<nofsol;i++){
-            arr[i]= sc.nextInt();
+            solu[i]= sc.nextInt();
         }
         int nofrnd= sc.nextInt();
         int power[] = new int[nofrnd];
@@ -20,7 +20,7 @@ class TestClass {
         }
        /* System.out.print(nofsol);
         for(int i=0; i<nofsol;i++){
-            System.out.println (arr[i]);
+            System.out.println (solu[i]);
         }
         for(int i=0; i<nofrnd;i++){
             System.out.println (power[i]);
@@ -35,10 +35,10 @@ class TestClass {
              int total=0;
              while(s<=e){
                 mid=(s+e)/2;
-                if(arr[mid]>power[i]){
+                if(solu[mid]>power[i]){
                     e=mid-1;
                 }
-                else if(arr[mid]<power[i]){
+                else if(solu[mid]<power[i]){
                     s=mid+1;
                 }
                 else{
@@ -50,7 +50,7 @@ class TestClass {
             }
                  System.out.print(nofsol-ans);
                  for(int j=ans; j<nofsol; j++){
-                     total+=arr[j];}
+                     total+=solu[j];}
                  
              System.out.println(total);
              //System.out.println(ans);

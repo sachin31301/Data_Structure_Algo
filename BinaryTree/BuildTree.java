@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.Map.Entry;
 
 
 public class BuildTree {
@@ -32,10 +33,14 @@ public class BuildTree {
      //  System.out.println(dia(root));
       // pair ans= optdia(root);
       // System.out.println(ans.dia);
-      bfs(root);
-      replacesum(root);
-      bfs(root);
-        
+      //bfs(root);
+      //replacesum(root);
+      //bfs(root);
+     // System.out.println(dia(root)); 
+      //dpdia(root);
+      LinkList l=flatten(root);
+      System.out.println(l.tail.data);
+      
     }
     public static Node buildtree() {
         Scanner sc = new Scanner(System.in);
@@ -218,14 +223,14 @@ public class BuildTree {
 
     }
 
-    public static Node buildbalanced(int arr[], int s, int e) {
+    public static Node buildbalanced(int solu[], int s, int e) {
         if(s>e){
             return null;
         }
         int mid=(s+e)/2;
-        Node root= new Node(arr[mid]);
-        root.left=buildbalanced(arr, s, mid-1);
-        root.right=buildbalanced(arr, mid+1, e);
+        Node root= new Node(solu[mid]);
+        root.left=buildbalanced(solu, s, mid-1);
+        root.right=buildbalanced(solu, mid+1, e);
         return root;
     }
 
@@ -411,6 +416,106 @@ public class BuildTree {
         return null;
         Node root = new Node(d);
         
+
+    }
+    static class Qobj{
+        Node node;
+        int hd;
+        public Qobj(Node node,int hdis){
+            this.node=node;
+            hd=hdis;
+        }
+        public static void topview(Node root){
+            if(root==null)
+            return;
+            HashMap<Integer,Node>hm= new HashMap<>();
+            Queue<Qobj>q= new LinkedList<>();
+            q.add(new Qobj(root, 0));
+            while(!q.isEmpty()){
+                Qobj temp=q.poll();
+                if(!hm.containsKey(temp.hd))
+                hm.put(temp.hd, temp.node);
+                if(temp.node.left!=null)
+                q.add(new Qobj(temp.node.left, temp.hd-1));
+                if(temp.node.right!=null)
+                q.add(new Qobj(temp.node.right, temp.hd+1));
+
+            }
+
+            for(Entry<Integer,Node> e:hm.entrySet()){
+                System.out.println(e.getKey() +""+ e.getValue());
+            }
+
+        }
+    }
+
+    static class Ans{
+        int a;
+        public Ans(int v){
+            a=v;
+        }
+    }
+
+    public static void dpdia(Node root) {
+        Ans dia= new Ans(0);
+        dpdiah(root,dia);
+        System.out.println(dia.a);
+    }
+
+    public static int dpdiah(Node root, Ans dia) {
+        if(root==null)
+        return 0;
+        int l=dpdiah(root.left, dia);
+        int r=dpdiah(root.right, dia);
+        int temp= Math.max(l, r);
+        int ans= Math.max(temp, l+r);
+        dia.a= Math.max(dia.a, ans);
+        return temp +1;
+
+    }
+     public static void maxsumpath(Node root) {
+        Ans a= new Ans(0);
+        maxsum(root,a);
+
+
+    }
+    public static int maxsum(Node root,Ans a) {
+        if(root==null){
+            return 0;
+        }
+        int l=maxsum(root.left, a);
+        int r= maxsum(root.right, a);
+        int temp= Math.max(Math.max(l, r)+root.data, root.data);
+        int ans= Math.max(temp, l+r+root.data);
+        a.a=Math.max(ans, a.a);
+        return temp;
+    }
+
+    public static Node lca(Node root,Node r1, Node r2){
+        if(root==null)
+        return null;
+        if(root==r1||root==r2)
+        return root;
+        Node left=lca(root.left, r1, r2);
+        Node right=lca(root.right,r1,r2);
+        if(left!=null&&right!=null)
+        return root;
+        if(left==null&&right==null)
+        return null;
+        return left==null?right:left;
+
+    }
+
+    public static ArrayList<Node>  path(Node root,Node node) {
+        ArrayList<Node>al= new ArrayList<>();
+        if(root==null)
+        return;
+        if(root==node){
+            al.add(root);
+            return al;
+        }
+        A
+
 
     }
 }

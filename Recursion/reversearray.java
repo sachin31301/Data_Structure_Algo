@@ -3,12 +3,12 @@ public class reversearray {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
     int no=sc.nextInt();
-    int arr[]= new int[no];
+    int solu[]= new int[no];
     for(int i=0;i<no;i++){
-        arr[i]=sc.nextInt();
+        solu[i]=sc.nextInt();
 
     }
-    System.out.println(reverseArray(arr,0,no-1));
+    System.out.println(reverseArray(solu,0,no-1));
     }
 }
 public static int[] reverseArray(int[] a,int i,int j){

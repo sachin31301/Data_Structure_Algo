@@ -3,18 +3,18 @@ public class arraysum {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
     int no=sc.nextInt();
-    int arr[]= new int[no];
+    int solu[]= new int[no];
     for(int i=0;i<no;i++){
-        arr[i]=sc.nextInt();
+        solu[i]=sc.nextInt();
 
     }
-    System.out.println(sum(arr,no));
+    System.out.println(sum(solu,no));
     }
-    static int sum(int arr[], int no){
+    static int sum(int solu[], int no){
         if(no==0)
         return 0;
         else
-        return arr[no-1]+sum(arr, no-1);
+        return solu[no-1]+sum(solu, no-1);
     }
 
 }
